@@ -9,5 +9,7 @@ packages:
     - opencode
     - lazydocker
     - k9s
+    - go
+    - ripgrep 
 
     casks:

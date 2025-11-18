@@ -1,5 +1,5 @@
 return {
-    "vim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
 
     config = function()
         require("telescope").setup({
