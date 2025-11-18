@@ -1,0 +1,11 @@
+packages:
+  linux:
+    brews:
+    - 'git'
+    - lazygit
+    - fish
+    - lsd
+    - fzf
+    - opencode
+
+    casks:
