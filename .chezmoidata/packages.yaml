@@ -7,5 +7,7 @@ packages:
     - lsd
     - fzf
     - opencode
+    - lazydocker
+    - k9s
 
     casks:
