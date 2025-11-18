@@ -11,5 +11,6 @@ packages:
     - k9s
     - go
     - ripgrep 
+    - go-task
     # - nushell 
     casks:
