@@ -11,14 +11,18 @@ zstyle :compinstall filename '/home/christophe/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+PATH=$PATH:~/go/bin
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PATH="/home/christophe/.local/bin:$PATH"
 alias vim=nvim
 alias r=ranger
 alias cm=chezmoi
-alias cdcm="cd ~/.local/share/chezmoi" 
+alias cdcm="cd ~/.local/share/chezmoi"
 export EDITOR=nvim
 export VISUAL=nvim
 alias lg=lazygit
-export PATH="/home/christophe/.local/bin:$PATH
 
 
 plugins=(git azure colorize common aliases docker kubectl z )
