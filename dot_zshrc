@@ -19,3 +19,5 @@ alias cdcm="cd ~/.local/share/chezmoi"
 export EDITOR=nvim
 export VISUAL=nvim
 alias lg=lazygit
+
+plugins=(git azure colorize common aliases docker kubectl z )
