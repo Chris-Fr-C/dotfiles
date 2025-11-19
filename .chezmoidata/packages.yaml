@@ -2,31 +2,45 @@ packages:
   linux:
     preshell:
     brews:
-      - neovim
-      - lazygit
-      - zsh
-      - zsh-autosuggestions
-      - lsd
-      - fzf
-      - opencode
-      - lazydocker
-      - k9s
-      - ripgrep
-      - go-task
-      # files explorer
-      - yazi
-      - ranger
-      # And ranger deps
-      - highlight
-      - bat
-      # region vim utils
-      - starship
-      - htop
-      # Development and compilers
-      - dotnet
-      - go
-      - gcc@15
+      dev:
+        - neovim
+        - lazygit
+        - zsh
+        - zsh-autosuggestions
+        - lsd
+        - fzf
+        - opencode
+        - lazydocker
+        - k9s
+        - ripgrep
+        - go-task
+        # files explorer
+        - yazi
+        - ranger
+        # Space manager
+        - duf
+        # And ranger deps
+        - highlight
+        - bat
+        # region vim utils
+        - starship
+        - htop
+        # Development and compilers
+        - dotnet
+        - go
+        - gcc@15
+        - go-task
+      tui:
+        # Time management
+        - gping
+        - nethogs
+        # logs
+        - gonzo
+        - glances
     casks:
+      - flox
+      - font-open-iconic
+
     postshell:
       # Needs to be installed after zsh
       - test -d "${ZSH:-$HOME/.oh-my-zsh}" || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

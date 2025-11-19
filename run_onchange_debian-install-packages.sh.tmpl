@@ -10,15 +10,24 @@ echo "Running preshell commands"
 
 
 brew bundle --file=/dev/stdin <<EOF
-{{ range .packages.linux.brews -}}
+{{ range .packages.linux.brews.dev -}}
 brew {{ . | quote }}
 {{ end -}}
+
+
 {{ range .packages.linux.casks -}}
 cask {{ . | quote }}
 {{ end -}}
 
 EOF
 {{ end -}}
+
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.linux.brews.tui -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+
 
 
 echo "Running postshell commands"
