@@ -18,6 +18,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH="/home/christophe/.local/bin:$PATH"
 alias vim=nvim
 alias r=ranger
+alias c=yazi
+
 alias cm=chezmoi
 alias cdcm="cd ~/.local/share/chezmoi"
 export EDITOR=nvim
@@ -29,6 +31,10 @@ alias cmg="lg -p ~/.local/share/chezmoi"
 plugins=(git azure colorize common aliases docker kubectl z )
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source ~/.profile
+
 
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
+
+

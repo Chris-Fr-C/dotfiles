@@ -14,7 +14,7 @@ packages:
       - ripgrep
       - go-task
       # files explorer
-      - nnn
+      - yazi
       - ranger
       # And ranger deps
       - highlight
@@ -26,7 +26,6 @@ packages:
       - dotnet
       - go
       - gcc@15
-
     casks:
     postshell:
       # Needs to be installed after zsh
