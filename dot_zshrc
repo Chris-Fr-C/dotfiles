@@ -21,3 +21,4 @@ export VISUAL=nvim
 alias lg=lazygit
 
 plugins=(git azure colorize common aliases docker kubectl z )
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

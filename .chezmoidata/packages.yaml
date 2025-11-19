@@ -6,6 +6,7 @@ packages:
       - neovim
       - lazygit
       - zsh
+      - zsh-autosuggestions
       - lsd
       - fzf
       - opencode
