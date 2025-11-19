@@ -1,7 +1,6 @@
 packages:
   linux:
     preshell:
-
     brews:
       - neovim
       - lazygit
