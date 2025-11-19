@@ -23,6 +23,7 @@ packages:
       - bat
       # region vim utils
       - starship
+      - htop
     # - nushell
 
     casks:

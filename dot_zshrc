@@ -23,7 +23,7 @@ alias cdcm="cd ~/.local/share/chezmoi"
 export EDITOR=nvim
 export VISUAL=nvim
 alias lg=lazygit
-
+alias addnew="vim ~/.local/share/chezmoi/.chezmoidata/packages.yaml"
 
 plugins=(git azure colorize common aliases docker kubectl z )
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
