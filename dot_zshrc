@@ -1,0 +1,21 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd extendedglob nomatch notify
+unsetopt beep
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/christophe/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+eval "$(starship init zsh)"
+alias vim=nvim
+alias r=ranger
+alias cm=chezmoi
+alias cdcm="cd ~/.local/share/chezmoi" 
+export EDITOR=nvim
+export VISUAL=nvim
+alias lg=lazygit

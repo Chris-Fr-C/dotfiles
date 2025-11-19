@@ -1,7 +1,5 @@
 packages:
   linux:
-    preshell:
-
     brews:
       - neovim
       - lazygit
@@ -27,7 +25,5 @@ packages:
 
     casks:
 
-    postshell:
-      # Needs to be installed after zsh
-      - test -d "${ZSH:-$HOME/.oh-my-zsh}" || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      - grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+    shell:
+      - '[ -d "${ZSH:-$HOME/.oh-my-zsh}" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'

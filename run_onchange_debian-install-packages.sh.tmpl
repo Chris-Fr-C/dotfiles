@@ -1,6 +1,14 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+
+echo "Running preshell commands"
+{{ range .packages.linux.preshell -}}
+{{ .  }}
+{{ end -}}
+
+
+
 brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.linux.brews -}}
 brew {{ . | quote }}
@@ -13,6 +21,10 @@ EOF
 {{ end -}}
 
 
-fish -c 'for plugin in (cat ~/.config/fish/fish_plugins); fisher install "$plugin";end'
+echo "Running postshell commands"
+{{ range .packages.linux.postshell -}}
+{{ .  }}
+{{ end -}}
+
 
 
