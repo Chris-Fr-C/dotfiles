@@ -11,10 +11,8 @@ packages:
       - opencode
       - lazydocker
       - k9s
-      - go
       - ripgrep
       - go-task
-      - gcc@15
       # files explorer
       - nnn
       - ranger
@@ -24,10 +22,12 @@ packages:
       # region vim utils
       - starship
       - htop
-    # - nushell
+      # Development and compilers
+      - dotnet
+      - go
+      - gcc@15
 
     casks:
-
     postshell:
       # Needs to be installed after zsh
       - test -d "${ZSH:-$HOME/.oh-my-zsh}" || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
