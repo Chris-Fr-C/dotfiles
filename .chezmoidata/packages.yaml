@@ -1,10 +1,11 @@
 packages:
   linux:
     brews:
-    - 'git'
+    - neovim
     - lazygit
     - fish
     - lsd
+    - fisher
     - fzf
     - opencode
     - lazydocker
@@ -13,4 +14,5 @@ packages:
     - ripgrep 
     - go-task
     # - nushell 
+
     casks:

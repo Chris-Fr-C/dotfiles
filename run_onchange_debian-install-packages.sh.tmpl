@@ -8,5 +8,11 @@ brew {{ . | quote }}
 {{ range .packages.linux.casks -}}
 cask {{ . | quote }}
 {{ end -}}
+
 EOF
 {{ end -}}
+
+
+fish -c 'for plugin in (cat ~/.config/fish/fish_plugins); fisher install "$plugin";end'
+
+
