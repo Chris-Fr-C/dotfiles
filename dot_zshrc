@@ -36,6 +36,14 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.profile
 
+# Allow ctrl left and right
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
+# Ctrl backspace and delete
+bindkey '^H' backward-kill-word
+bindkey '^?' backward-kill-word
+# Make Ctrl+Delete kill the next word
+bindkey '^[[3;5~' kill-word
 
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
