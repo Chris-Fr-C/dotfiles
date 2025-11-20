@@ -29,7 +29,7 @@ packages:
         - dotnet
         - go
         - gcc@15
-        - go-task
+        - z
       tui:
         # Time management
         - gping
