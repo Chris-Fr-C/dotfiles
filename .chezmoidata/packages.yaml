@@ -30,6 +30,9 @@ packages:
         - go
         - gcc@15
         - z
+        # Better git
+        - jj
+        - jjui
       tui:
         # Time management
         - gping
