@@ -37,6 +37,8 @@ packages:
         # File manager (shortcut spf)
         - superfile
       tui:
+        # Ollama TUI
+        - oterm
         # Time management
         - gping
         - nethogs
