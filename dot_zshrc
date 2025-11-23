@@ -17,8 +17,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="/home/christophe/.local/bin:$PATH"
 alias vim=nvim
-alias r=ranger
-alias c=yazi
+alias c=spf
 
 alias cm=chezmoi
 alias cdcm="cd ~/.local/share/chezmoi"

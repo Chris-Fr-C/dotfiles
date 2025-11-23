@@ -15,7 +15,8 @@ packages:
         - ripgrep
         - go-task
         # files explorer
-        - yazi
+        # Currently removing yazi to try to use super file
+        # - yazi
         - ranger
         # Space manager
         - duf
@@ -33,6 +34,8 @@ packages:
         # Better git
         - jj
         - jjui
+        # File manager (shortcut spf)
+        - superfile
       tui:
         # Time management
         - gping
