@@ -51,6 +51,22 @@ bindkey '^?' backward-delete-char
 # Make Ctrl+Delete kill the next word
 bindkey '^[[3;5~' kill-word
 
+IR" ] || {
+        . "$SPF_LAST_DIR"
+        rm -f -- "$SPF_LAST_DIR" > /dev/null
+    }
+}# Allow superfile to exit on the directory and cd
+spf() {
+    os=$(uname -s)
+
+    if [[ "$os" == "Linux" ]]; then
+        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
+    fi
+
+    command spf "$@"
+
+    [ ! -f "$SPF_LAST_D
+
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
 
