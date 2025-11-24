@@ -42,3 +42,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.keymap.set("t", "<Shift-Esc>", [[<C-\><C-n>]], opts)
     end,
 })
+
+vim.keymap.set("n", "q", "<Nop>", { desc = "Disable macro recording" })
+vim.keymap.set("n", "Q", "<Nop>", { desc = "Disable Ex mode" })
