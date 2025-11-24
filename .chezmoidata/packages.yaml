@@ -31,6 +31,7 @@ packages:
         - go
         - gcc@15
         - z
+        - fd
         # Better git
         - jj
         - jjui
@@ -52,7 +53,6 @@ packages:
         - gonzo
         - glances
     casks:
-      - flox
       - font-open-iconic
 
     postshell:
