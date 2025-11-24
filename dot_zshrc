@@ -31,7 +31,7 @@ export killport() {
     kill -9 $(lsof -t -i:$1)
 }
 
-plugins=(git azure colorize common aliases docker kubectl z )
+plugins=(git azure colorize common aliases docker kubectl z zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat juju)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
@@ -51,11 +51,7 @@ bindkey '^?' backward-delete-char
 # Make Ctrl+Delete kill the next word
 bindkey '^[[3;5~' kill-word
 
-IR" ] || {
-        . "$SPF_LAST_DIR"
-        rm -f -- "$SPF_LAST_DIR" > /dev/null
-    }
-}# Allow superfile to exit on the directory and cd
+# Allow superfile to exit on the directory and cd
 spf() {
     os=$(uname -s)
 
@@ -65,8 +61,11 @@ spf() {
 
     command spf "$@"
 
-    [ ! -f "$SPF_LAST_D
-
+    [ ! -f "$SPF_LAST_DIR" ] || {
+        . "$SPF_LAST_DIR"
+        rm -f -- "$SPF_LAST_DIR" > /dev/null
+    }
+}
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
 
