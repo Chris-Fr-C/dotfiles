@@ -39,7 +39,7 @@ return {
                 "trailspace",
                 "visits",
             }
-
+            vim.b.minipairs_disable = true
             for _, name in ipairs(modules) do
                 local ok, mod = pcall(function()
                     return require("mini." .. name)
@@ -50,6 +50,8 @@ return {
                     end)
                 end
             end
+            -- No autopairs
+            require("mini.pairs").setup({ modes = { insert = false, command = false, terminal = false } })
         end,
     },
 }
