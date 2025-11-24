@@ -38,6 +38,8 @@ packages:
         - superfile
         # Process manager
         - lsof
+        # Json parser
+        - jq
       tui:
         # Ollama TUI
         - oterm

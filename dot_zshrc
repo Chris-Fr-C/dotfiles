@@ -26,9 +26,8 @@ export VISUAL=nvim
 alias lg=lazygit
 alias addnew="vim ~/.local/share/chezmoi/.chezmoidata/packages.yaml"
 alias cmg="lg -p ~/.local/share/chezmoi"
-alias tw="taskwarrior-tui"
 export killport() {
-    kill -9 $(lsof -t -i:$1)
+    kill -9 $(lsof -t -i:$0)
 }
 
 plugins=(git azure colorize common aliases docker kubectl z zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat juju)
@@ -65,6 +64,14 @@ spf() {
         . "$SPF_LAST_DIR"
         rm -f -- "$SPF_LAST_DIR" > /dev/null
     }
+}
+
+
+task_version=$(brew info task --json | jq -r first.versions.stable)
+alias tw="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin/task"
+export twu(){
+    PATH="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin:$PATH"
+    taskwarrior-tui
 }
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
