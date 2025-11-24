@@ -36,6 +36,8 @@ packages:
         - jjui
         # File manager (shortcut spf)
         - superfile
+        # Process manager
+        - lsof
       tui:
         # Ollama TUI
         - oterm

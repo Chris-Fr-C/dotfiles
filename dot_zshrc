@@ -27,7 +27,9 @@ alias lg=lazygit
 alias addnew="vim ~/.local/share/chezmoi/.chezmoidata/packages.yaml"
 alias cmg="lg -p ~/.local/share/chezmoi"
 alias tw="taskwarrior-tui"
-
+export killport() {
+    kill -9 $(lsof -t -i:$1)
+}
 
 plugins=(git azure colorize common aliases docker kubectl z )
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -35,9 +37,17 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.profile
 
+
+
 # Allow ctrl left and right
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+# Ctrl backspace and delete
+
+# Restore default backward delete character
+bindkey '^H' backward-delete-char
+bindkey '^?' backward-delete-char
+
 # Make Ctrl+Delete kill the next word
 bindkey '^[[3;5~' kill-word
 
