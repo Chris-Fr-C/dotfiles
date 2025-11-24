@@ -40,6 +40,8 @@ packages:
         - lsof
         # Json parser
         - jq
+        # Easy doc
+        - tlrc
       tui:
         # Ollama TUI
         - oterm
