@@ -69,7 +69,7 @@ spf() {
 
 task_version=$(brew info task --json | jq -r first.versions.stable)
 alias tw="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin/task"
-export twu(){
+export tww(){
     PATH="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin:$PATH"
     taskwarrior-tui
 }
