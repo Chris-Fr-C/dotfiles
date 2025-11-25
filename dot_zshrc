@@ -27,7 +27,13 @@ alias lg=lazygit
 alias addnew="vim ~/.local/share/chezmoi/.chezmoidata/packages.yaml"
 alias cmg="lg -p ~/.local/share/chezmoi"
 export killport() {
-    kill -9 $(lsof -t -i:$0)
+    psnum=$(lsof -t -i:$1)
+    if [ -z $psnum ]; then
+      echo "Nothing to kill"
+      return 
+    fi
+    echo "Killing $psnum"
+    kill -9 $psnum 
 }
 
 plugins=(git azure colorize common aliases docker kubectl z zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat juju)
