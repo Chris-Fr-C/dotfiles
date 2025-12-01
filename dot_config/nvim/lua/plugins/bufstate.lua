@@ -1,3 +1,7 @@
+if true then
+    return {}
+end
+
 return {
     "syntaxpresso/bufstate.nvim",
     dependencies = { "folke/snacks.nvim" },

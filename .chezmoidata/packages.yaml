@@ -3,6 +3,8 @@ packages:
     preshell:
     brews:
       dev:
+        # For encoding etc...
+        - file
         - neovim
         - lazygit
         - zsh
@@ -43,6 +45,10 @@ packages:
         - jq
         # Easy doc
         - tlrc
+        # Multiplexer
+        - tmux
+        # Its package manager
+        - tpm
       tui:
         # Ollama TUI
         - oterm

@@ -1,3 +1,7 @@
+if true then
+    return {}
+end
+
 return {
     "mgierada/lazydocker.nvim",
     dependencies = { "akinsho/toggleterm.nvim" },

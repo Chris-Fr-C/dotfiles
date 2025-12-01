@@ -1,3 +1,7 @@
+if true then
+    return {}
+end
+
 -- Bundle of good plugins
 return {
     {

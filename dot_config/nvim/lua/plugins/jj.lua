@@ -1,3 +1,7 @@
+if true then
+    return {}
+end
+
 return {
     "mrdwarf7/lazyjui.nvim",
     dependencies = {
