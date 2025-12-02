@@ -46,9 +46,12 @@ packages:
         # Easy doc
         - tlrc
         # Multiplexer
+        # Remember to instal https://github.com/gpakosz/.tmux
         - tmux
         # Its package manager
         - tpm
+        # Browser
+        - carbonyl
       tui:
         # Ollama TUI
         - oterm
