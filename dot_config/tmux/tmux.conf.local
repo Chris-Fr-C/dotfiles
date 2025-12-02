@@ -458,7 +458,8 @@ set -g @plugin 'jaclu/tmux-menus'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-logging'
 set -g @plugin 'laktak/extrakto'
-
+set -g @plugin 'rickstaa/tmux-notify'
+set -g @plugin 'Morantron/tmux-fingers'
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
