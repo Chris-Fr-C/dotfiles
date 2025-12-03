@@ -51,7 +51,6 @@ packages:
         # Its package manager
         - tpm
         # Browser
-        - carbonyl
       tui:
         # Ollama TUI
         - oterm
