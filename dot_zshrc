@@ -75,10 +75,17 @@ spf() {
 
 task_version=$(brew info task --json | jq -r first.versions.stable)
 alias tw="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin/task"
-export tww(){
+export twu(){
     PATH="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin:$PATH"
     taskwarrior-tui
 }
+
+# Adding ui support
+export DISPLAY=:0
+export LIBGL_ALWAYS_INDIRECT=1
+export LIBGL_ALWAYS_SOFTWARE=1
+
+
 # NEEDS TO BE AT THE END
 eval "$(starship init zsh)"
 
