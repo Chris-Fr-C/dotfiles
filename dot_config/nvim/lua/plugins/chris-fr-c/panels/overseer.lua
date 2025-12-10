@@ -18,6 +18,10 @@ return {
   },
   opts = {
     dap = false,
+    templates = {
+      "builtin",
+      "task",
+    },
     task_list = {
       bindings = {
         ["<C-h>"] = false,
@@ -49,7 +53,7 @@ return {
     { "<leader>oq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
     { "<leader>oi", "<cmd>OverseerInfo<cr>",        desc = "Overseer Info" },
     { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
-    { "<leader>ot", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
+    -- { "<leader>ot", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
     { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
   },
 }
