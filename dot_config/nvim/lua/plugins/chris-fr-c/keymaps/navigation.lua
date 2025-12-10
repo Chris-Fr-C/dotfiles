@@ -10,4 +10,20 @@ vim.keymap.set("n", "<A-Left>", "<C-o>", { noremap = true, silent = true, desc =
 vim.keymap.set("n", "<A-l>", "<C-i>", { noremap = true, silent = true, desc = "Jump to next location" })
 vim.keymap.set("n", "<A-Right>", "<C-i>", { noremap = true, silent = true, desc = "Jump to next location" })
 
+-- Two-way system clipboard using win32yank on Windows
+vim.opt.clipboard = "unnamedplus" -- use system clipboard for all yank/paste operations
+
+vim.g.clipboard = {
+  name = "win32yank",
+  copy = {
+    ["+"] = "win32yank -i --crlf",
+    ["*"] = "win32yank -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank -o --lf",
+    ["*"] = "win32yank -o --lf",
+  },
+  cache_enabled = 0,
+}
+
 return {}
