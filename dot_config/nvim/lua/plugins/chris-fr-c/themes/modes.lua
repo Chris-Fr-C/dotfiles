@@ -19,8 +19,8 @@ return {
         modes = {
           -- Normal mode: light blue line, much darker blue cursor
           n = {
-            winhl = { CursorLine = { bg = "#d6e6f5" } }, -- light blue line
-            hl = { ModeCursor = { bg = "#1a3f80" } }, -- much darker blue cursor
+            winhl = { CursorLine = { bg = "#90D5FF" } }, -- light blue line
+            hl = { ModeCursor = { bg = "#00FF00" } }, -- much darker blue cursor
           },
 
           -- Insert mode: light red line, dark red cursor
