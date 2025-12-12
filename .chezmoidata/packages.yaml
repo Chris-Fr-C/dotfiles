@@ -47,10 +47,11 @@ packages:
         - tlrc
         # Multiplexer
         # Remember to instal https://github.com/gpakosz/.tmux
-        - tmux
+        # Tmux alternative
+        - zellij
         # Its package manager
         - tpm
-        # Browser
+        
       tui:
         # Ollama TUI
         - oterm
