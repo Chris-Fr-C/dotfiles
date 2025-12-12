@@ -51,6 +51,10 @@ packages:
         - zellij
         # Its package manager
         - tpm
+        # Better cd
+        - z
+        # snippets
+        - nap
         
       tui:
         # Ollama TUI

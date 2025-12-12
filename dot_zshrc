@@ -79,11 +79,18 @@ export twu(){
     PATH="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin:$PATH"
     taskwarrior-tui
 }
+alias zz="zellij"
+
+# Better cd
+. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+
 
 # Adding ui support
 export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=1
 export LIBGL_ALWAYS_SOFTWARE=1
+
+
 
 
 # NEEDS TO BE AT THE END
