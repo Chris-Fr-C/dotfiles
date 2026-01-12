@@ -1,5 +1,9 @@
 -- Colored modes
 -- lua/plugins/mode_line_colors.lua
+-- -- Colored modes
+-- lua/plugins/mode_line_colors.lua
+-- Colored modes
+-- lua/plugins/mode_line_colors.lua
 return {
   {
     "rasulomaroff/reactive.nvim",
@@ -11,40 +15,89 @@ return {
         name = "custom-mode-line",
         init = function()
           vim.opt.termguicolors = true
-          -- Define a custom cursor highlight group
+
           vim.opt.guicursor:append(
             "n-v-c:block-ModeCursor,i-ci-ve:ver25-ModeCursor,r-cr:hor20-ModeCursor,o:hor50-ModeCursor"
           )
         end,
+
         modes = {
-          -- Normal mode: light blue line, much darker blue cursor
+          -- Normal mode
           n = {
-            winhl = { CursorLine = { bg = "#90D5FF" } }, -- light blue line
-            hl = { ModeCursor = { bg = "#00FF00" } }, -- much darker blue cursor
+            winhl = {
+              -- Line number keeps background
+              CursorLineNr = { bg = "#00FF00" },
+
+              -- Text side gets underline only
+              CursorLine = {
+                underline = true,
+                sp = "#00FF00",
+                bg = "NONE",
+              },
+            },
+            hl = {
+              ModeCursor = { bg = "#00FF00" },
+            },
           },
 
-          -- Insert mode: light red line, dark red cursor
+          -- Insert mode
           i = {
-            winhl = { CursorLine = { bg = "#f5d6d6" } }, -- light red line
-            hl = { ModeCursor = { bg = "#800000" } }, -- dark red cursor
+            winhl = {
+              CursorLineNr = { bg = "#800000" },
+              CursorLine = {
+                underline = true,
+                sp = "#800000",
+                bg = "NONE",
+              },
+            },
+            hl = {
+              ModeCursor = { bg = "#800000" },
+            },
           },
 
-          -- Delete mode (Replace 'R'): light orange line, darker orange cursor
+          -- Replace mode (R)
           R = {
-            winhl = { CursorLine = { bg = "#f5e0d6" } }, -- light orange line
-            hl = { ModeCursor = { bg = "#d2691e" } }, -- darker orange cursor
+            winhl = {
+              CursorLineNr = { bg = "#d2691e" },
+              CursorLine = {
+                underline = true,
+                sp = "#d2691e",
+                bg = "NONE",
+              },
+            },
+            hl = {
+              ModeCursor = { bg = "#d2691e" },
+            },
           },
 
-          -- Replace mode (command 'c'): light orange line, darker orange cursor
+          -- Command replace (c)
           c = {
-            winhl = { CursorLine = { bg = "#f5e0d6" } }, -- light orange line
-            hl = { ModeCursor = { bg = "#d2691e" } }, -- darker orange cursor
+            winhl = {
+              CursorLineNr = { bg = "#d2691e" },
+              CursorLine = {
+                underline = true,
+                sp = "#d2691e",
+                bg = "NONE",
+              },
+            },
+            hl = {
+              ModeCursor = { bg = "#d2691e" },
+            },
           },
 
-          -- Visual modes (v, V, block): pastel purple line, much darker cursor
+          -- Visual modes
           [{ "v", "V", "\x16" }] = {
-            winhl = { CursorLine = { bg = "#e6d6f5" } }, -- pastel purple line
-            hl = { ModeCursor = { bg = "#5a2e80" } }, -- much darker purple cursor
+            winhl = {
+              CursorLineNr = { bg = "#5a2e80" },
+              CursorLine = {
+                underline = true,
+                sp = "#e6d6f5",
+                bg = "NONE",
+              },
+            },
+            hl = {
+              ModeCursor = { bg = "#5a2e80" },
+            },
           },
         },
       })
@@ -52,8 +105,8 @@ return {
       reactive.setup({
         configs = { ["custom-mode-line"] = true },
         builtin = {
-          cursorline = true, -- keep cursorline always enabled
-          cursor = false, -- we use custom cursor color
+          cursorline = true,
+          cursor = false,
           modemsg = false,
         },
       })
