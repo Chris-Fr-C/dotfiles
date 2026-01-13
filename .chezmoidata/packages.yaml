@@ -55,7 +55,8 @@ packages:
         - z
         # snippets
         - nap
-        
+        # Bookmark manager 
+        - buku
       tui:
         # Ollama TUI
         - oterm
