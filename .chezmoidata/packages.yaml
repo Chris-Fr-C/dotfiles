@@ -56,7 +56,7 @@ packages:
         # snippets
         - nap
         # Bookmark manager 
-        - buku
+        - dhth/tap/bmm
       tui:
         # Ollama TUI
         - oterm

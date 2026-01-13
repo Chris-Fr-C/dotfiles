@@ -84,6 +84,8 @@ alias zz="zellij"
 # Better cd
 . /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
+# Bookmark
+alias b='buku --suggest'
 
 alias cnvim="cm edit ~/.config/nvim/lua/plugins/chris-fr-c"
 
