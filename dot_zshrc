@@ -73,6 +73,15 @@ spf() {
 }
 
 
+
+# Foreground background access
+fgf() {
+  local job
+  job=$(jobs | fzf --prompt="fg> " | sed 's/^\[\([0-9]\+\)\].*/%\1/')
+  [[ -n "$job" ]] && fg "$job"
+}
+
+
 task_version=$(brew info task --json | jq -r first.versions.stable)
 alias tw="/home/linuxbrew/.linuxbrew/Cellar/task/${task_version}/bin/task"
 export twu(){
