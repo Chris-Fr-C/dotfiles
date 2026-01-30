@@ -58,8 +58,10 @@ packages:
         # Bookmark manager 
         - dhth/tap/bmm
       tui:
+        # Cheatsheet
+        - cheat
         # Ollama TUI
-        - oterm
+        # - oterm
         # Time management
         - gping
         - nethogs
