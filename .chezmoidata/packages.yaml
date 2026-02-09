@@ -58,6 +58,8 @@ packages:
         # Bookmark manager 
         - dhth/tap/bmm
       tui:
+        # vim like ui
+        - neovide
         # Cheatsheet
         - cheat
         # Ollama TUI
