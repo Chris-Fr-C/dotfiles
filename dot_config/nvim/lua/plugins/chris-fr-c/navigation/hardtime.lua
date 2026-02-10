@@ -1,4 +1,7 @@
 -- Tips when I am not being vimesque enough
+if true then
+  return {}
+end
 return {
   "m4xshen/hardtime.nvim",
   lazy = false,
