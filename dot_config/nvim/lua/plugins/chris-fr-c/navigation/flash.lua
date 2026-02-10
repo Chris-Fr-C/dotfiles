@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 -- Equivalent of surround, to quickly move accross  things.
 return {
   "folke/flash.nvim",
