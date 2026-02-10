@@ -97,6 +97,10 @@ alias zz="zellij"
 alias cnvim="cm edit ~/.config/nvim/lua/plugins/chris-fr-c"
 alias bui="bmm tui"
 
+webui(){  
+  echo "Starting on http://localhost:5000"
+  ttyd -W -p 5000 zsh
+}
 # Adding ui support
 export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=1
