@@ -57,6 +57,8 @@ packages:
         - nap
         # Bookmark manager 
         - dhth/tap/bmm
+        # terninal on browser
+        - ttyd
       tui:
         # vim like ui
         - neovide
