@@ -22,4 +22,35 @@ vim.keymap.set("x", "P", '"_dP', opts)
 -- make it behave the same way in visual mode
 vim.keymap.set("x", "<C-S-v>", '"_dP', opts)
 
+-- Hotkey to choose SQL dialect for current buffer
+vim.keymap.set("n", "<leader>cL", function()
+  local dialects = {
+    "ansi",
+    "bigquery",
+    "clickhouse",
+    "db2",
+    "duckdb",
+    "hive",
+    "mariadb",
+    "mysql",
+    "plsql",
+    "postgresql",
+    "redshift",
+    "snowflake",
+    "spark",
+    "sqlite",
+    "sql",
+    "transactsql",
+    "tsql",
+    "vertica",
+  }
+
+  vim.ui.select(dialects, { prompt = "Select SQLFluff dialect:" }, function(choice)
+    if choice then
+      vim.b.sql_dialect = choice
+      vim.notify("SQLFluff dialect set to: " .. choice, vim.log.levels.INFO)
+    end
+  end)
+end, { desc = "Set SQLFluff SQL dialect" })
+
 return {}
