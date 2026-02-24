@@ -4,4 +4,5 @@ return {
   { "nyoom-engineering/oxocarbon.nvim" },
   { "bluz71/vim-moonfly-colors" },
   { "catppuccin/nvim" },
+  { "scottmckendry/cyberdream.nvim" },
 }
