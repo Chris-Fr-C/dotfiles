@@ -4,7 +4,7 @@ vim.keymap.set("n", "x", '"_x', { noremap = true, silent = true })
 -- Overseer template
 
 vim.keymap.set("n", "<leader>ot", function()
-  require("overseer").run_template()
+  require("overseer").run_task({}, nil)
 end, { desc = "Run Overseer Task Template" })
 
 -- Prevent paste from overwriting the clipboard
@@ -21,6 +21,15 @@ vim.keymap.set("x", "P", '"_dP', opts)
 -- If you use Ctrl+Shift+V inside Neovim to paste,
 -- make it behave the same way in visual mode
 vim.keymap.set("x", "<C-S-v>", '"_dP', opts)
+
+-- Removing the delete goes into register that is super annoying
+-- Remap d to delete without putting in register
+vim.keymap.set("n", "d", '"_d', { noremap = true })
+vim.keymap.set("x", "d", '"_d', { noremap = true })
+
+-- Also remap c (change) if you want the same behavior
+vim.keymap.set("n", "c", '"_c', { noremap = true })
+vim.keymap.set("x", "c", '"_c', { noremap = true })
 
 -- Hotkey to choose SQL dialect for current buffer
 vim.keymap.set("n", "<leader>cL", function()
