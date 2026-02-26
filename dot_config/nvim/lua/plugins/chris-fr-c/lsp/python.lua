@@ -14,4 +14,37 @@ return {
       options = {}, -- if you add plugin options, they go here.
     },
   },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+
+                ruff = {
+                  enabled = true,
+                  formatEnabled = false, -- use black for formatting
+                },
+
+                rope = {
+                  enabled = true,
+                },
+
+                pylsp_mypy = {
+                  enabled = true,
+                  live_mode = false,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }
