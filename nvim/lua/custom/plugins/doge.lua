@@ -1,0 +1,28 @@
+local containers = require("custom.config.keymap-containers")
+
+vim.pack.add({
+  "https://github.com/kkoomen/vim-doge",
+})
+
+local function install_doge()
+  vim.fn['doge#install']()
+end
+vim.g.doge_enable_mappings = 0
+
+
+
+-- Formats
+vim.g.doge_doc_standard_cs = 'xmldoc'
+vim.g.doge_doc_standard_python = 'google'
+
+-- Generate comment for current line
+vim.keymap.set('n', containers.generate.key .. "d", '<Plug>(doge-generate)', {desc="[d]ocumentation"})
+vim.keymap.set('n', containers.generate.key .. "i", '<cmd>DogeInstall', {desc="documentation [i]nstall"})
+
+-- Interactive mode comment todo-jumping
+vim.keymap.set('n', containers.root.key .. '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('n', containers.root.key .. '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
+vim.keymap.set('i', containers.root.key .. '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('i', containers.root.key .. '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
+vim.keymap.set('x', containers.root.key .. '<TAB>', '<Plug>(doge-comment-jump-forward)')
+vim.keymap.set('x', containers.root.key .. '<S-TAB>', '<Plug>(doge-comment-jump-backward)')
