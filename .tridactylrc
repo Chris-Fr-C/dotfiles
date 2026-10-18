@@ -1,7 +1,12 @@
+set newtab https://duckduckgo.com/
+" or set newtab about:blank
+
 " Verify with :findrc
 " Navigate between tabs
 bind H tabprev
 bind L tabnext
+
+bind --mode=ex <C-y> ex.insert_character_or_completion
 
 " Navigate browser history
 bind gh back
@@ -16,3 +21,30 @@ set allowautofocus false
 " Maybe
 " autocmd TabEnter .* mode normal
 " works too
+
+
+set modeindicator true
+set theme dark
+
+
+" Theme example
+" :colourscheme --url https://raw.githubusercontent.com/dracula/tridactyl/main/dracula.css dracula
+
+
+" Modern, default layout, blue accent
+" :colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha.css catppuccin-mocha
+
+" Modern, vimium layout, mauve accent
+" :colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-vimium-mauve.css catppuccin-mocha-vimium-mauve
+
+" Legacy colors, default layout
+" :colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-mocha-legacy.css catppuccin-mocha-legacy
+
+" Late in the middle
+" colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-latte-vimium-mauve.css catppuccin-latte-vimium-mauve
+
+" colourscheme --url https://raw.githubusercontent.com/devnullvoid/tridactyl/main/themes/catppuccin-macchiato-vimium-mauve.css catppuccin-macchiato-vimium-mauve
+
+" Dracula theme
+" https://draculatheme.com/tridactyl
+colourscheme --url https://raw.githubusercontent.com/dracula/tridactyl/main/dracula.css dracula
