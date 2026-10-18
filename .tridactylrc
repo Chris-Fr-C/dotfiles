@@ -6,3 +6,13 @@ bind L tabnext
 " Navigate browser history
 bind gh back
 bind gl forward
+
+bind --mode=insert jk composite unfocus; mode normal
+bind --mode=input jk composite unfocus; mode normal
+
+
+set allowautofocus false
+
+" Maybe
+" autocmd TabEnter .* mode normal
+" works too
