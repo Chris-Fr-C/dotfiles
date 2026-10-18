@@ -403,9 +403,9 @@
       "rev": "66829e04041ceba72a9006d1c6c9d0c818e2b3dd",
       "src": "https://github.com/tinted-theming/tinted-vim"
     },
-    "todo-comments.nvim": {
-      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
-      "src": "https//github.com/folke/todo-comments.nvim"
+    "tinymist": {
+      "rev": "6887d86a1c534659a93fd0e65dfb9c573fae6fe3",
+      "src": "https://github.com/Myriad-Dreamin/tinymist"
     },
     "toggleterm.nvim": {
       "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
@@ -422,6 +422,10 @@
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
       "src": "https://github.com/folke/trouble.nvim"
+    },
+    "typst-preview.nvim": {
+      "rev": "1c2e19486397be1c580b560fc50ee36abe329c46",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "ui": {
       "rev": "6ced1135d2d1f87ae01fe0995977372eef42cd03",

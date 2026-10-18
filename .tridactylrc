@@ -1,0 +1,8 @@
+" Verify with :findrc
+" Navigate between tabs
+bind H tabprev
+bind L tabnext
+
+" Navigate browser history
+bind gh back
+bind gl forward
