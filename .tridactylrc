@@ -1,5 +1,7 @@
-set newtab https://duckduckgo.com/
+" set newtab https://duckduckgo.com/
 " or set newtab about:blank
+set newtab about:blank
+
 
 " Verify with :findrc
 " Navigate between tabs
@@ -11,9 +13,6 @@ bind --mode=ex <C-y> ex.insert_character_or_completion
 " Navigate browser history
 bind gh back
 bind gl forward
-
-bind --mode=insert jk composite unfocus; mode normal
-bind --mode=input jk composite unfocus; mode normal
 
 
 set allowautofocus false
@@ -48,3 +47,52 @@ set theme dark
 " Dracula theme
 " https://draculatheme.com/tridactyl
 colourscheme --url https://raw.githubusercontent.com/dracula/tridactyl/main/dracula.css dracula
+
+" ayu dark
+" colorscheme --url https://gist.githubusercontent.com/WirlyWirly/e875ec0a38728d496867e0a9c6ee968c/raw/AyuDark.css AyuDark
+
+" srcery
+" colorscheme --url https://raw.githubusercontent.com/FranciscoTrigo/Srcery-Tridactyl/refs/heads/main/srcery-Tridactyl.css Srcery
+
+" monochrome grey
+" colorscheme --url https://gist.githubusercontent.com/okt/4227d9529b647e32ae38eae164c4ee76/raw/b166b7dd4e8504addc3e27cd7255db6cc40dcaf7/monochrome-tri.css monochrome-grey
+
+" monochrome amber
+
+" monochrome violet
+colorscheme --url https://gist.githubusercontent.com/kimagin/29d51de4cd90ae02985ce2517a4bad39/raw/d53ed8f6e51bad4aa7958a9880cf8b687c94274a/tridactyl_theme.css monochrome-violet
+
+" Base 16
+" https://github.com/bezmi/base16-tridactyl
+" Woodland
+" colourscheme --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/refs/heads/master/base16-woodland.css base16-woodland
+
+
+" colourscheme --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/refs/heads/master/base16-isotope.css base16-isotope
+
+" Embers: good contrast
+" colourscheme --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/refs/heads/master/base16-embers.css base16-embers
+
+colourscheme --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/refs/heads/master/base16-eighties.css base16-eighties
+" flat
+" colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-flat.css base16-flat
+
+colourscheme --url https://raw.githubusercontent.com/bezmi/base16-tridactyl/refs/heads/master/base16-summerfruit-light.css base16-summerfruit-light
+
+" colourscheme shydactyl
+"colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-railscasts.css base16-railscast
+
+" colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-pop.css base16-pop
+
+
+" colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-gruvbox-light-hard.css base16-gruvbox-light-hard
+" light
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-tomorrow.css base16-tomorrow
+
+" dark
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-3024.css base16-3024
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-green-screen.css base16-greenscreen
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-brewer.css base16-brewer
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-bright.css base16-bright
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-unikitty-dark.css base16-unikity-dark
+colourscheme --url https://github.com/bezmi/base16-tridactyl/raw/refs/heads/master/base16-ashes.css base16-ashes

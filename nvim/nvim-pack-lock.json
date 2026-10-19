@@ -379,6 +379,10 @@
       "rev": "fa6318fc6676294bff0fd56ae8e8f9552be1ac7e",
       "src": "https://github.com/sQVe/sort.nvim"
     },
+    "srcery-vim": {
+      "rev": "ae584b8320c6e74bd37ca908e45026163c086628",
+      "src": "https://github.com/srcery-colors/srcery-vim"
+    },
     "telescope-fzf-native.nvim": {
       "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
       "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
