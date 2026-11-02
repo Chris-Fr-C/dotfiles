@@ -50,10 +50,10 @@ vim.keymap.set("n", containers.window.key .. "j", "<cmd>split<cr>", { desc = "Up
 vim.keymap.set("n", containers.window.key .. "n", "<cmd>enew<cr>", { desc = "[n]ew buffer" })
 vim.keymap.set("n", containers.window.key .. "t", "<cmd>tabnew<cr>", { desc = "[t]ab" })
 
--- Recording with q is super annoying so changing it.
+-- Recording with q is super annoying so changinr it.
 -- Deactivate 'q' from recording macros
 vim.keymap.set("n", containers.root.key .. "q", "<Nop>", { desc = "Disable default macro recording" })
-vim.keymap.set("n", containers.root.key .. "<C-A-r>", "q", { desc = "Record macro" })
+vim.keymap.set("n", containers.root.key .. "<A-r>", "q", { desc = "Record macro" })
 
 -- Clipboard is annoying when pasting. Only using X to cut.
 -- Remap 'd' (and visual 'd') to delete to the blackhole register
