@@ -19,7 +19,7 @@ require("noice").setup({
 	messages = {
 		enabled = true, -- enables the Noice messages UI
 		view = view_type, -- default view for messages
-		view_error = "notify", -- view for errors
+		view_error = "mini", -- view for errors
 		view_warn = view_type, -- view for warnings
 		view_history = "messages", -- view for :messages
 		view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
