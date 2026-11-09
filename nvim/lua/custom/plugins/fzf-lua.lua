@@ -22,7 +22,7 @@ end, { desc = "[f]ile" })
 
 vim.keymap.set('n', containers.find.key .. 'b', fzf.buffers, { desc = 'Find existing [b]uffers' })
 vim.keymap.set("n", containers.find.key .. "w", function()
-	fzf.grep_cWORD()
+	fzf.live_grep()
 end, { desc = "[w]ord" })
 
 return {}
