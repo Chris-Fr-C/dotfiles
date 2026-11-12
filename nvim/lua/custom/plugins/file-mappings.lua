@@ -1,34 +1,23 @@
--- My mapping to open with visidata the files such as csv etc...
--- -- Automatically open tabular files in VisiData using Neovim's embedded terminal
-vim.api.nvim_create_autocmd("BufReadCmd", {
-  pattern = { "*.parquet", "*.csv", "*.tsv", "*.xls", "*.xlsx" , "*.sqlite"},
-  callback = function(args)
-    local file = vim.fn.fnameescape(args.file)
-    local buf = args.buf
+local containers = require("custom.config.keymap-containers")
+-- Open the current file in VisiData (or DuckDB for .duckdb files) on demand
+vim.keymap.set("n", containers.open.key .. "v", function()
+  local raw_file = vim.api.nvim_buf_get_name(0)
 
-    -- Wipe the unread empty buffer and open VisiData in a terminal buffer
-    vim.cmd("terminal vd " .. file)
+  if raw_file == "" then
+    vim.notify("No file associated with the current buffer", vim.log.levels.WARN)
+    return
+  end
 
-    -- Clean up buffer settings for a smooth terminal experience
-    vim.bo.buflisted = true
-    vim.cmd("startinsert")
-  end,
-})
+  local file = vim.fn.fnameescape(raw_file)
+  local ext = vim.fn.fnamemodify(raw_file, ":e"):lower()
 
-vim.api.nvim_create_autocmd("BufReadCmd", {
-  pattern = { "*.duckdb" },
-  callback = function(args)
-    local file = vim.fn.fnameescape(args.file)
-    local buf = args.buf
+  -- Choose command based on extension
+  local cmd = (ext == "duckdb") and "duckdb " or "vd "
 
-    -- Wipe the unread empty buffer and open VisiData in a terminal buffer
-    vim.cmd("terminal duckdb " .. file)
-
-    -- Clean up buffer settings for a smooth terminal experience
-    vim.bo.buflisted = true
-    vim.cmd("startinsert")
-  end,
-})
-
+  -- Open in Neovim's embedded terminal (use `enew | terminal ...` if you want to keep the raw text buffer open in the background)
+  vim.cmd("terminal " .. cmd .. file)
+  vim.bo.buflisted = true
+  vim.cmd("startinsert")
+end, { desc = "Open current file in VisiData / DuckDB" })
 
 return {}

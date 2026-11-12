@@ -14,8 +14,8 @@ require("code_runner").setup(
   }
 )
 
-vim.keymap.set("n", containers.execute.key .. "f", "", {desc="[f]ile"})
-vim.keymap.set("n", containers.execute.key .. "p", "", {desc="[p]roject"})
+vim.keymap.set("n", containers.execute.key .. "f", "", {desc="file"})
+vim.keymap.set("n", containers.execute.key .. "p", "", {desc="project"})
 
 
 
