@@ -1,40 +1,42 @@
-local local_leader=",";
+local local_leader = ","
 
 -- This changes often based on my tastes. So we make it a variable that we can use and
 -- append based on the organisation we want.
 local containers = {
-  local_leader = {key=local_leader, desc="Local leader", alias=true},
-  config = { key = '<leader>C', desc = '[C]onfig' },
-  config_vim = { key = '<leader>Cv', desc = '[v]im' },
-  quit = { key = '<leader>q', desc = '[q]uit' },
-  find = { key = '<leader>f', desc = '[f]ind' },
-  generate = {key="<leader>g", desc="[g]enerate or [g]it"},
-  git = { key = '<leader>g', desc = '[g]it', alias= true},
-  lsp = {key="<leader>c", desc="[c]ode"},
-  code = {key="<leader>c", desc="[c]ode", alias=true},
-  evaluate = {key=local_leader.."e", desc="[e]valuate"},
-  diagnostic = {key="<leader>ct", desc="[t]roubles diagnostic"},
-  open = {key="<leader>v", desc="[v]isualize", alias=true},
-  build = {key="<leader>b", desc="[b]uild"},
-  execute = {key="<leader>x", desc="E[x]ecute"},
-  debug = {key="<leader>d", desc="[d]ebug"},
-  visualize = {key="<leader>v", desc="[v]isualize"}, -- just here so the linter helps us to know where it is used.
+	local_leader = { key = local_leader, desc = "Local leader", alias = true },
 
-  -- Not using obsidian for the moment
-  -- obsidian = {key=local_leader.."o", desc="[o]bsidian"}, -- just here so the linter helps us to know where it is used.
-  terminal = {key="<leader>t", desc="[t]erminal"}, -- just here so the linter helps us to know where it is used.
-  org = {key="<leader>o", desc="[o]rg"},
-  window = { key = '<leader>w', desc = '[w]indow' },
-  root = {key="", desc=""}, -- just here so the linter helps us to know where it is used.
+	quit = { key = "<leader>q", desc = "Quit" },
+	find = { key = "<leader>f", desc = "Find" },
+	git = { key = "<leader>g", desc = "Git", alias = false },
 
+	lsp = { key = "<leader>c", desc = "Code" },
+	code = { key = "<leader>c", desc = "Code", alias = true },
+
+	evaluate = { key = local_leader .. "e", desc = "Evaluate" },
+	diagnostic = { key = "<leader>ct", desc = "Troubles diagnostic" },
+	build = { key = "<leader>b", desc = "Build" },
+	execute = { key = "<leader>x", desc = "Execute" },
+	debug = { key = "<leader>d", desc = "Debug" },
+
+	open = { key = "<leader><leader>", desc = "Open", alias = false },
+	visualize = { key = "<leader><leader>", desc = "", alias = true }, -- just here so the linter helps us to know where it is used.
+	config = { key = "<leader><leader>c", desc = "Config" },
+	config_vim = { key = "<leader><leader>cv", desc = "Vim config" },
+	generate = { key = "<leader><leader>g", desc = "Generatet" },
+
+	-- Not using obsidian for the moment
+	-- obsidian = {key=local_leader.."o", desc="[o]bsidian"}, -- just here so the linter helps us to know where it is used.
+	terminal = { key = "<leader>t", desc = "Terminal" }, -- just here so the linter helps us to know where it is used.
+	org = { key = "<leader>o", desc = "OrgMode" },
+	window = { key = "<leader>w", desc = "Window" },
+	root = { key = "", desc = "" }, -- just here so the linter helps us to know where it is used.
 }
 
 -- Automatically register the root descriptions for UI menus
 for _, target in pairs(containers) do
-  if target.key ~= "" and not target.alias then
-    vim.keymap.set('n', target.key, '', { desc = target.desc })
-  end
-
+	if target.key ~= "" and not target.alias then
+		vim.keymap.set("n", target.key, "", { desc = target.desc })
+	end
 end
 
 return containers
