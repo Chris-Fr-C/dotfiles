@@ -9,7 +9,7 @@ local builtin = require 'telescope.builtin'
 vim.pack.add({"https://github.com/nvim-telescope/telescope.nvim"})
 
 require("telescope").setup({
-	  pickers = {
+    pickers = {
     colorscheme = {
       enable_preview = true,
     },
@@ -18,6 +18,8 @@ require("telescope").setup({
 
 vim.keymap.set('n', containers.find.key .. 'h', builtin.help_tags, { desc = 'Search help' })
 vim.keymap.set('n', containers.open.key ..'k', builtin.keymaps, { desc = 'Keymaps' })
+-- vim.keymap.set('n', containers.open.key ..'n', builtin.notify, { desc = 'Notifications' })
+vim.keymap.set('n', containers.local_leader.key ..'d', builtin.diagnostics, { desc = 'Diagnostics' })
 -- vim.keymap.set('n', containers.find.key .. 'F', builtin.find_files, { desc = '[S]earch [F]iles' })
 -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
 -- vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })

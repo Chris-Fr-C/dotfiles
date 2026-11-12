@@ -116,7 +116,7 @@ require("noice").setup({
 	},
 })
 
-vim.keymap.set("n", containers.open.key .. "n", "", { desc = "[n]otifications" })
+vim.keymap.set("n", containers.open.key .. "n", "", { desc = "Notifications" })
 vim.keymap.set("n", containers.open.key .. "nl", function()
 	require("noice").cmd("last")
 end, { desc = "[l]ast" })

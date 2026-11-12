@@ -6,5 +6,6 @@ vim.pack.add({
 
 local containers = require("custom.config.keymap-containers")
 
+vim.keymap.set("n", containers.open.key .. "d", "", {desc="Database"})
 vim.keymap.set("n", containers.open.key .. "dd", "<cmd>DBUIToggle<cr>", {desc="[d]atabase toggle"})
 vim.keymap.set("n", containers.open.key .. "dn", "<cmd>DBUIAddConnection<cr>", {desc="[n]ew connection"})

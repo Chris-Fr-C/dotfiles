@@ -22,7 +22,7 @@ local containers = {
 	visualize = { key = "<leader><leader>", desc = "", alias = true }, -- just here so the linter helps us to know where it is used.
 	config = { key = "<leader><leader>c", desc = "Config" },
 	config_vim = { key = "<leader><leader>cv", desc = "Vim config" },
-	generate = { key = "<leader><leader>g", desc = "Generatet" },
+	generate = { key = "<leader><leader>g", desc = "Generate" },
 
 	-- Not using obsidian for the moment
 	-- obsidian = {key=local_leader.."o", desc="[o]bsidian"}, -- just here so the linter helps us to know where it is used.

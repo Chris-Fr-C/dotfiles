@@ -1,6 +1,6 @@
 local enable = false;
 
-if activate then
+if enable then
   vim.pack.add {
     'https://github.com/nvim-zh/colorful-winsep.nvim',
   }
