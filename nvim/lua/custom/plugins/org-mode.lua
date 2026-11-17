@@ -102,6 +102,24 @@ vim.api.nvim_create_autocmd("FileType", {
 			require("orgmode").action("org_mappings.previous_visible_heading")
 		end, { buffer = args.buf, silent = true, desc = "Previous Org Heading" })
 
+		-- Promote / Demote heading (node level) with Alt+h and Alt+l
+		vim.keymap.set({ "n", "i" }, "<M-h>", function()
+			require("orgmode").action("org_mappings.do_promote")
+		end, { buffer = args.buf, silent = true, desc = "Promote Org Heading" })
+
+		vim.keymap.set({ "n", "i" }, "<M-l>", function()
+			require("orgmode").action("org_mappings.do_demote")
+		end, { buffer = args.buf, silent = true, desc = "Demote Org Heading" })
+
+		-- Move subtree up / down the tree with Alt+k and Alt+j
+		vim.keymap.set({ "n", "i" }, "<M-j>", function()
+			require("orgmode").action("org_mappings.move_subtree_down")
+		end, { buffer = args.buf, silent = true, desc = "Move Org Subtree Down" })
+
+		vim.keymap.set({ "n", "i" }, "<M-k>", function()
+			require("orgmode").action("org_mappings.move_subtree_up")
+		end, { buffer = args.buf, silent = true, desc = "Move Org Subtree Up" })
+
 		vim.keymap.set(
 			{ "i", "n" },
 			containers.root.key .. "<S-CR>",
@@ -113,8 +131,57 @@ vim.api.nvim_create_autocmd("FileType", {
 		)
 
 		vim.keymap.set({ "n" }, containers.org.key .. "i", "", {
+			buffer = args.buf,
 			desc = "insert",
 		})
+
+		-- Insert both UUID (:ID:) and slugified node name (:CUSTOM_ID:) on current heading
+		vim.keymap.set("n", containers.org.key .. "ii", function()
+			local org = require("orgmode")
+			local file = org.files:get_current_file()
+			if not file then
+				return
+			end
+
+			local headline = file:get_closest_headline()
+			if not headline then
+				vim.notify("No Org headline found under cursor", vim.log.levels.WARN)
+				return
+			end
+
+			-- Generate a standard v4 UUID
+			local template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+			math.randomseed(vim.uv.hrtime())
+			local uuid = string.gsub(template, "[xy]", function(c)
+				local v = (c == "x") and math.random(0, 0xf) or math.random(8, 0xb)
+				return string.format("%x", v)
+			end)
+
+			-- Slugify the headline title into a readable CUSTOM_ID
+			local title = headline:get_title() or "node"
+			local slug = title
+				:lower()
+				:gsub("[^%w%s%-_]", "") -- strip punctuation/symbols
+				:gsub("[%s_]+", "-") -- replace spaces/underscores with hyphens
+				:gsub("%-+", "-") -- collapse multiple hyphens
+				:gsub("^%-+", "") -- trim leading hyphens
+				:gsub("%-+$", "") -- trim trailing hyphens
+
+			if slug == "" then
+				slug = "node"
+			end
+
+			-- Only set :ID: if one doesn't already exist (preserves existing org-roam links)
+			local existing_id = headline:get_property("ID")
+			if not existing_id or existing_id == "" then
+				headline:set_property("ID", uuid)
+			end
+
+			-- Set or update :CUSTOM_ID: from the heading title
+			headline:set_property("CUSTOM_ID", slug)
+
+			vim.notify(string.format("Inserted ID & CUSTOM_ID (#%s)", slug), vim.log.levels.INFO)
+		end, { buffer = args.buf, silent = true, desc = "Insert Node ID & Custom ID" })
 
 		vim.keymap.set({ "n" }, containers.org.key .. "l", "", {
 			desc = "link",
