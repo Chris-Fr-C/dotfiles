@@ -23,15 +23,15 @@ vim.keymap.set("n", containers.config_vim.key .. "r", ":source $MYVIMRC<CR>", { 
 vim.keymap.set("n", containers.quit.key .. "a", "<cmd>qa!<cr>", { desc = "[a]ll" })
 
 -- When closing the last buffer if only neotree was open it caused some issues so i rewrote it.
-vim.keymap.set('n', containers.quit.key .. 'b', '<cmd>q!<cr>', { desc = '[b]uffer' })
-vim.keymap.set("n", containers.window.key .. "q", "<cmd>q!<cr>", { desc = "[b]uffer" })
+vim.keymap.set('n', containers.quit.key .. 'b', '<cmd>q!<cr>', { desc = 'buffer' })
+vim.keymap.set("n", containers.window.key .. "q", "<cmd>q!<cr>", { desc = "buffer" })
 
-vim.keymap.set("n", containers.quit.key .. "q", "<cmd>qa!<cr>", { desc = "[q]uit vim" })
-vim.keymap.set("n", containers.quit.key .. "o", "<cmd>only!<cr>", { desc = "[o]thers" })
+vim.keymap.set("n", containers.quit.key .. "q", "<cmd>qa!<cr>", { desc = "Quit vim" })
+vim.keymap.set("n", containers.quit.key .. "o", "<cmd>only!<cr>", { desc = "Others" })
 
 -- Root shortcuts:
-vim.keymap.set("n", containers.root.key .. "<C-q>", "<cmd>bd!<cr>", { desc = "[b]uffer" })
-vim.keymap.set("n", containers.root.key .. "<A-q>", "<cmd>qa!<cr>", { desc = "[a]ll" })
+vim.keymap.set("n", containers.root.key .. "<C-q>", "<cmd>bd!<cr>", { desc = "Close buffer" })
+vim.keymap.set("n", containers.root.key .. "<A-q>", "<cmd>qa!<cr>", { desc = "Close all" })
 vim.keymap.set("n", containers.root.key .. "<leader>-", "<cmd>split<cr>", { desc = "Up/Down split" })
 vim.keymap.set("n", containers.root.key .. "<leader>|", "<cmd>vsplit<cr>", { desc = "Left/Right split" })
 
