@@ -411,6 +411,10 @@
       "rev": "66829e04041ceba72a9006d1c6c9d0c818e2b3dd",
       "src": "https://github.com/tinted-theming/tinted-vim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "46ae9b3c8f3039e96ff4497d190ad0aee091f30d",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "tinymist": {
       "rev": "6887d86a1c534659a93fd0e65dfb9c573fae6fe3",
       "src": "https://github.com/Myriad-Dreamin/tinymist"
