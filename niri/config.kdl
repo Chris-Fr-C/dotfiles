@@ -644,3 +644,8 @@ binds {
 
 // DMS Include Configs
 include "dms/outputs.kdl"
+
+// This should allow to have nvidia properly working
+debug {
+    disable-direct-scanout
+}
